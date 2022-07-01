@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #8c8c8c; font-style: italic;}
+.s1 { color: #080808;}
+.s2 { color: #0033b3;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+ * Copyright (C) 2021 The Android Open Source Project. 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */</span>
+<span class="s2">package </span><span class="s1">com.example.lunchtray</span>
+
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import androidx.navigation.NavController</span>
+<span class="s1">import androidx.navigation.fragment.NavHostFragment</span>
+<span class="s1">import com.example.lunchtray.databinding.ActivityMainBinding</span>
+
+<span class="s2">class </span><span class="s1">MainActivity : AppCompatActivity() {</span>
+
+    <span class="s0">// Binding object instance corresponding to the activity_main.xml layout</span>
+    <span class="s0">// when the view hierarchy is attached to the fragment.</span>
+    <span class="s1">private lateinit </span><span class="s2">var </span><span class="s1">binding: ActivityMainBinding</span>
+    <span class="s1">private lateinit </span><span class="s2">var </span><span class="s1">navController: NavController</span>
+
+    <span class="s1">override </span><span class="s2">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s2">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+
+        <span class="s1">binding = ActivityMainBinding.inflate(layoutInflater)</span>
+        <span class="s1">setContentView(binding.root)</span>
+
+        <span class="s0">// : Retrieve NavController from the NavHostFragment</span>
+        <span class="s2">val </span><span class="s1">navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) </span><span class="s2">as </span><span class="s1">NavHostFragment</span>
+        <span class="s1">navController = navHostFragment.navController</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
